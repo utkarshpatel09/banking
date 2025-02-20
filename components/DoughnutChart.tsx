@@ -7,8 +7,32 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 
 
-const DoughnutChart = () => {
-  return <Doughnut data={[]}  />
+const DoughnutChart = ({ accounts }: DoughnutChartProps) => {
+  const data = { 
+    datasets: [
+      {
+        label: 'Banks',
+        data: [1345, 5000, 6749],
+        backgroundColor: ['#0747b6', '#2265d8', '#2f91fa']
+      }
+    ],
+    labels: ['Bank 1', 'Bank 2', 'Bank 3']
+
+   }
+
+  return <Doughnut 
+  data={data}  
+options={{
+  cutout: '60%',
+  plugins: {
+    legend:{
+      display: false
+    }
+  }
+}}
+      
+  
+  />
    
   
 }
